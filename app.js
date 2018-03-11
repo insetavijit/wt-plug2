@@ -13,8 +13,10 @@ var dir = './tmp';
 
 var dirLs = 
 [ // 21 dir for now
-    './asset',
+
     './node_modules',
+
+    './asset',
     './asset/scss',
     './asset/scss/adminStyle',
     './asset/scss/fontStyle',
@@ -44,6 +46,17 @@ var dirLs =
 ];
 
 var fileLs = [//21 files for now
+    //files for root
+    'index.php',
+    'header.php',
+    'footer.php',
+
+    'functions.php',
+    'singel.php',
+    'page.php',
+    'style.css',
+
+    'README.md',
     // lib > scss    
     'asset/scss/adminStyle/adminStyle.scss',
     'asset/scss/fontStyle/fontStyle.scss',
@@ -69,18 +82,8 @@ var fileLs = [//21 files for now
     '.tmp/xyz.html',
     '.tmp/x.html',
     '.tmp/y.html',
-    '.tmp/z.html',
-    //files for root
-    'index.php',
-    'header.php',
-    'footer.php',
-
-    'functions.php',
-    'singel.php',
-    'page.php',
-    'style.css',
-
-    'README.md'
+    '.tmp/z.html'
+    
 ];
 
 var index = { 'newfile' : 0 , 'newdir' : 0 , 'dirExist' : 0 , 'fileExist' : 0 , 'errFile' :0 , 'errDir' : 0};
