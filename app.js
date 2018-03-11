@@ -8,43 +8,6 @@ var dir = './tmp';
 | |settings :
 \*/ var cmnd = {'createDir' : true , 'createFiles' : true , 'stopOnErr ' : false}
 
-
-
-
-var dirLs = 
-[ // 21 dir for now
-
-    './node_modules',
-
-    './asset',
-    './asset/scss',
-    './asset/scss/adminStyle',
-    './asset/scss/fontStyle',
-    './asset/ts',
-    './asset/ts/adminScripts',
-    './asset/ts/fontScripts',
-    
-    './inc',
-    './inc/src',
-    './inc/typings',
-    './inc/css',
-    './inc/js',
-
-    './func',
-    './func/widgets',
-    
-    'lib',
-    'lib/header',
-    'lib/footer',
-    'lib/content',
-
-    './document',
-    './document/resource',
-    './document/current',
-
-    '.tmp'
-];
-
 var fileLs = [//21 files for now
     //files for root
     'index.php',
@@ -84,6 +47,41 @@ var fileLs = [//21 files for now
     '.tmp/y.html',
     '.tmp/z.html'
     
+];
+
+
+var dirLs = 
+[ // 21 dir for now
+
+    './node_modules',
+
+    './asset',
+    './asset/scss',
+    './asset/scss/adminStyle',
+    './asset/scss/fontStyle',
+    './asset/ts',
+    './asset/ts/adminScripts',
+    './asset/ts/fontScripts',
+    
+    './inc',
+    './inc/src',
+    './inc/typings',
+    './inc/css',
+    './inc/js',
+
+    './func',
+    './func/widgets',
+    
+    'lib',
+    'lib/header',
+    'lib/footer',
+    'lib/content',
+
+    './document',
+    './document/resource',
+    './document/current',
+
+    '.tmp'
 ];
 
 var index = { 'newfile' : 0 , 'newdir' : 0 , 'dirExist' : 0 , 'fileExist' : 0 , 'errFile' :0 , 'errDir' : 0};
