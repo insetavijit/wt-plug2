@@ -18,8 +18,11 @@ var fileLs = [//21 files for now
     'singel.php',
     'page.php',
     'style.css',
-
     'README.md',
+    
+    //> common files :
+    "./func/theme_support.php",
+    "./func/enqueue.php",
     // lib > scss    
     'asset/scss/adminStyle/adminStyle.scss',
     'asset/scss/fontStyle/fontStyle.scss',
