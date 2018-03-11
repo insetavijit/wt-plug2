@@ -38,12 +38,12 @@ var fileLs = [//21 files for now
     // lib > content
     'lib/content/sidebarContent.php',
     'lib/content/mainContent.php',
-    // lib > Documentration file's
-    'document/current/index.md',
-    'document/current/funcList.md',
-    'document/current/widgets.md',
-    'document/current/support.md',
-    'document/current/about.md',
+    // lib > docration file's
+    'doc/current/index.md',
+    'doc/current/funcList.md',
+    'doc/current/widgets.md',
+    'doc/current/support.md',
+    'doc/current/about.md',
     //.tmp > not to build | readymade html files for html formatting and editing those are temporary
     '.tmp/xyz.html',
     '.tmp/x.html',
@@ -80,9 +80,9 @@ var dirLs =
     'lib/footer',
     'lib/content',
 
-    './document',
-    './document/resource',
-    './document/current',
+    './doc',
+    './doc/resource',
+    './doc/current',
 
     '.tmp'
 ];
