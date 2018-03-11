@@ -23,7 +23,7 @@ gulp.task('tst' , function(){
     console.log( 'all looks good !' ); 
 });
 /// short-hand methods
-gulp.task("all" , [ 'tsc' , 'scss' ]);
+gulp.task("all" , [ 'tsc' , 'scss' , 'sftLib' ]);
 gulp.task("all-w" , [ 'tsc-w' , 'scss-w' ]);
 gulp.task("scss-w" , ['scss'] , function(){ gulp.watch( dirLs.scss , ['scss'] ); });
 gulp.task("tsc-w" , ['tsc'] , function(){ gulp.watch( dirLs.scss , ['tsc'] ); });
@@ -57,9 +57,14 @@ gulp.task('tsc', function() {
 
 //> libs to move 
 gulp.task('sftLib', function() {
-    gulp.src([
-        // name what to move : exact locations of files ( move item )
-        ''
+    gulp.src([//just un comment all to use them !!!
+        // //> fremworks :
+        // './node_modules/bootstrap/dist/css/bootstrap.min.css',
+        // './node_modules/bootstrap/dist/js/bootstrap.min.js',
+        // //> icon - pack 
+        // './node_modules/font-awesome**/**',
+        // //>js libs
+        // './node_modules/jquery/dist/jquery.min.js'
     ])
-      .pipe(gulp.dest(dirLs.build + '/libs/inc'))//move to
+      .pipe(gulp.dest(dirLs.build))//move to
 });
