@@ -1,11 +1,24 @@
 {
   "name": "wt-seed",
   "version": "1.0.0",
+  "description": "",
   "main": "app.js",
-  "repository": "https://github.com/insetavijit/wt-seed.git",
-  "author": "insetavijit",
-  "license": "MIT",
-  "private": true,
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/insetavijit/wt-seed.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/insetavijit/wt-seed/issues"
+  },
+  "homepage": "https://github.com/insetavijit/wt-seed#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-plumber": "^1.2.0",
