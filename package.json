@@ -14,5 +14,10 @@
     "gulp-typescript": "^3.2.4",
     "merge2": "^1.2.1",
     "typescript": "^2.7.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1"
   }
 }
