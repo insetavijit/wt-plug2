@@ -15,8 +15,8 @@ var fileLs = [//21 files for now
     'footer.php',
 
     'functions.php',
-    'singel.php',
-    'page.php',
+    // 'singel.php',
+    // 'page.php',
     'style.css',
     'README.md',
     
