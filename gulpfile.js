@@ -19,6 +19,17 @@ var
         'typings'   : 'typings'
     }
 ;
+
+gulp.task('tst' , function(){
+    console.log( 'all looks good !' ); 
+});
+/// short-hand methods
+gulp.task("all" , [ 'tsc' , 'scss' ]);
+gulp.task("all-w" , [ 'tsc-w' , 'scss-w' ]);
+gulp.task("scss-w" , ['scss'] , function(){ gulp.watch( dirLs.scss , 'scss' ); });
+gulp.task("tsc-w" , ['tsc'] , function(){ gulp.watch( dirLs.scss , 'tsc' ); });
+
+
 ///> scss 
 gulp.task('scss', function() {
     gulp.src(dirLs.scss)
