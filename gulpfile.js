@@ -5,18 +5,17 @@
 var 
     gulp = require("gulp"),
     sass = require('gulp-sass'),
-    pug = require("gulp-pug"),
     sourceMaps = require("gulp-sourcemaps"),
     ts =  require("gulp-typescript"),
     merge   =   require('merge2'),
-    plumber = require('gulp-plumber'),
-    imagemin = require('gulp-imagemin')
+    plumber = require('gulp-plumber')
     // liveReload = require( 'gulp-livereload')
     
     dirLs = {
         'scss'      : 'asset/scss/**/**.scss',
         'tsc'       : 'asset/ts/**/**.ts',
-        'typings'   : 'typings'
+        'typings'   : 'typings',
+        'build'     : 'inc'
     }
 ;
 
@@ -26,16 +25,18 @@ gulp.task('tst' , function(){
 /// short-hand methods
 gulp.task("all" , [ 'tsc' , 'scss' ]);
 gulp.task("all-w" , [ 'tsc-w' , 'scss-w' ]);
-gulp.task("scss-w" , ['scss'] , function(){ gulp.watch( dirLs.scss , 'scss' ); });
-gulp.task("tsc-w" , ['tsc'] , function(){ gulp.watch( dirLs.scss , 'tsc' ); });
+gulp.task("scss-w" , ['scss'] , function(){ gulp.watch( dirLs.scss , ['scss'] ); });
+gulp.task("tsc-w" , ['tsc'] , function(){ gulp.watch( dirLs.scss , ['tsc'] ); });
 
 
 ///> scss 
 gulp.task('scss', function() {
     gulp.src(dirLs.scss)
     .pipe(plumber())
+    .pipe(sourceMaps.init())
     .pipe(sass({outputStyle: 'compressed'}))
-    .pipe(gulp.dest(dirLs.build + '/inc/css'))
+    .pipe(sourceMaps.write("./map"))
+    .pipe(gulp.dest(dirLs.build + '/css'))
 });
 ///> typesctip compiling 
 gulp.task('tsc', function() {
@@ -49,7 +50,8 @@ gulp.task('tsc', function() {
         );
     return merge([
         tSrc.dts.pipe(gulp.dest(dirLs.typings + "/cust")),
-        tSrc.js.pipe(sourceMaps.write("./map")).pipe(gulp.dest(dirLs.build + '/inc/js'))
+        tSrc.js.pipe(sourceMaps.write("./map"))
+        .pipe(gulp.dest(dirLs.build + '/inc/js'))
     ]);
 });
 
