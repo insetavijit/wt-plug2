@@ -9,7 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "postinstall": "node app.js"
+    "add-df":"typings install --global dt~jquery",
+    "make":"gulp zip",
+    "postinstall": "npm run add-df && gulp setup"
   },
   "repository": {
     "type": "git",
