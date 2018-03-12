@@ -10,6 +10,12 @@ Author : `avijit sarkar`
 
 Author url : https://github.com/insetavijit/
 
+> ## _BOOOM !!!! just run `[ npm i ]` and all ready to Fly_
+
+post install sctipts makes this happen 
+- npm run `add-df`
+- node `app.js`
+
 > ## Notes :
 
 List of tools in this workfollow
@@ -40,7 +46,12 @@ indx|cmnd |handler | job
 08| node app.js | node | creates all requerd files + folders `| auto create |`
 09| npm run start | npm | creates all requerd files + folders `| auto create |
 10| npm i |npm| install all pkgs
+11 |npm add-df | typescript | add default df files 
+12 |npm make | gulp | create a zip with your theme files `exclude build tools ...`
 
-_i have added `node app.js` in `npm scripts > postinstall` so it should run the cmnd after installing all pkgs ( `after npm i` ) ._
+
+
+---
+<p style="text-align: center;"> : THANKS | ENJOY THE PARTY : </p>
 
 ---

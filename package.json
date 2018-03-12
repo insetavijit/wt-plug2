@@ -11,7 +11,7 @@
     "start": "node app.js",
     "add-df": "typings install --global dt~jquery",
     "make": "gulp zip",
-    "postinstall": "npm run add-df && gulp setup"
+    "postinstall": "npm run add-df && node app.js"
   },
   "repository": {
     "type": "git",
