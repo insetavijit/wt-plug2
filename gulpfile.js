@@ -8,7 +8,11 @@ var
     sourceMaps = require("gulp-sourcemaps"),
     ts =  require("gulp-typescript"),
     merge   =   require('merge2'),
-    plumber = require('gulp-plumber')
+    plumber = require('gulp-plumber'),
+    zip = require('gulp-zip'),
+    pkg = require('./package.json')
+    // fs = require('fs'),
+    // path = require ('path')
     // liveReload = require( 'gulp-livereload')
     
     dirLs = {
@@ -21,6 +25,11 @@ var
 
 gulp.task('tst' , function(){
     console.log( 'all looks good !' ); 
+    console.log( pkg.name);
+    var d = new Date() ;
+    console.log( d.getDate() + "-" + d.getMonth() + "-" + d.getFullYear() + "-" + d.getTime());
+     
+
 });
 /// short-hand methods
 gulp.task("all" , [ 'tsc' , 'scss' , 'sftLib' ]);
@@ -67,4 +76,28 @@ gulp.task('sftLib', function() {
         // './node_modules/jquery/dist/jquery.min.js'
     ])
       .pipe(gulp.dest(dirLs.build))//move to
+});
+
+///> zipp
+
+gulp.task('zip', () => {
+    var 
+        d =new Date(),
+        today = d.getDate() + "-" + d.getMonth() + "-" + d.getFullYear() + '-' + d.getTime()
+    ;
+    gulp.src([
+        '**.**',
+        'func**/**',
+        'inc**/**',
+        '!inc/src',
+        'lib**/**',
+        '!**.json',
+        '!**.js',
+        '!**.md',
+        '!**.log',
+        'doc**/**'
+    ])
+    .pipe(zip(pkg.name + '-publish-' + today +'.zip' ))
+    .pipe(gulp.dest('dist'))
+
 });
