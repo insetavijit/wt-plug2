@@ -4,6 +4,8 @@
 \*/
 var 
     gulp = require("gulp"),
+    colors = require("ansi-colors"),
+    log = require('fancy-log'),
     sass = require('gulp-sass'),
     sourceMaps = require("gulp-sourcemaps"),
     ts =  require("gulp-typescript"),
@@ -11,9 +13,6 @@ var
     plumber = require('gulp-plumber'),
     zip = require('gulp-zip'),
     pkg = require('./package.json')
-    // fs = require('fs'),
-    // path = require ('path')
-    // liveReload = require( 'gulp-livereload')
     
     dirLs = {
         'scss'      : 'asset/scss/**/**.scss',
@@ -24,12 +23,11 @@ var
 ;
 
 gulp.task('tst' , function(){
-    console.log( 'all looks good !' ); 
-    console.log( pkg.name);
-    var d = new Date() ;
-    console.log( d.getDate() + "-" + d.getMonth() + "-" + d.getFullYear() + "-" + d.getTime());
-     
-
+    // console.log( 'all looks good !' ); 
+    // console.log( pkg.name);
+    // var d = new Date() ;
+    // console.log( d.getDate() + "-" + d.getMonth() + "-" + d.getFullYear() + "-" + d.getTime());
+    log(colors.green( '[ ✓ ]') );
 });
 /// short-hand methods
 gulp.task("all" , [ 'tsc' , 'scss' , 'sftLib' ]);
@@ -98,6 +96,12 @@ gulp.task('zip', () => {
         'doc**/**'
     ])
     .pipe(zip(pkg.name + '-publish-' + today +'.zip' ))
+        .on('end' , function(){
+                log(
+                    colors.bold(colors.green( '[ ✓ ]') ),
+                    colors.bold(colors.red( ' Zipped ') ),
+                    colors.yellow( '[ ' + pkg.name + '-publish-' + today +'.zip ]'))
+        })
     .pipe(gulp.dest('dist'))
 
 });

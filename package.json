@@ -9,8 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "add-df":"typings install --global dt~jquery",
-    "make":"gulp zip",
+    "add-df": "typings install --global dt~jquery",
+    "make": "gulp zip",
     "postinstall": "npm run add-df && gulp setup"
   },
   "repository": {
@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/insetavijit/wt-seed#readme",
   "devDependencies": {
+    "ansi-colors": "^1.1.0",
+    "fancy-log": "^1.3.2",
     "gulp": "^3.9.1",
     "gulp-plumber": "^1.2.0",
     "gulp-sass": "^2.3.2",
