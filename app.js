@@ -1,5 +1,9 @@
-var fs = require('fs');
-var dir = './tmp';
+var 
+    fs = require('fs'),
+    dir = './tmp',
+    colors = require("ansi-colors"),
+    log = require('fancy-log')
+;
 
 /*\
 | | this is the main setup file for createing this project :
@@ -125,20 +129,16 @@ flyMsg(index.newfile + index.fileExist);
 }
 
 if(cmnd.createDir === true){
-    console.log ( '\n\n [ シ ] Direcory Creation Process Startd \n\n'  );
     for(var i=0 ; i< dirLs.length ; i++ ){
         if (!fs.existsSync(dirLs[i])){
             fs.mkdirSync(dirLs[i]);
-            console.log( '[ ✓ ] Directory Created -> ' + dirLs[i] );
             indexProcess (1) ;
         }else{
-            console.log( '[ ✖ ] directory is already exist  -> ' + dirLs[i]  );
             indexProcess(2);
         }
     }
 }
 if(cmnd.createFiles === true ){
-    console.log ( '\n\n [ シ ] file Creation Process Startd \n\n'  );
     if(cmnd["stopOnErr "] === true && cmnd.err > 0 ){
     }else{
 
@@ -148,15 +148,12 @@ if(cmnd.createFiles === true ){
             if(!fs.existsSync( filename )){
                 fs.writeFile(filename, '' , function(err) {
                     if(err){
-                        console.log ( '[ ✖ ] error : unable to create file -> ' + filename + "||" + err );
                         indexProcess(5);
                     }else{
-                        console.log('[ ✓ ] File Created -> ' + filename);
                         indexProcess (1) ;
                     }
                 });
             }else{
-                console.log('[ ✓ ] File is Exist Man -> ' + filename);  
                 indexProcess(3);
             }
         });
@@ -167,18 +164,19 @@ if(cmnd.createFiles === true ){
 | |
 |*/function flyMsg( stat ) {
     if((index.fileExist + index.newfile) === fileLs.length){
-        console.log( "----------------------------------------------");
-        console.log("[ ✓ ] Total File Created= " + index.newfile );
-        console.log("[ ✓ ] Total dir Created = " + index.newdir );
-        console.log("[ ✓ ] dir exist = " + index.dirExist );
-        console.log("[ ✓ ] file exist = " + index.fileExist );
-        console.log("[ ☺ ] file create error  = " + index.errFile );
-        console.log( "----------------------------------------------");
-
-        console.log("[ シ ] sum: files = [ "+(index.fileExist + index.newfile) +" ] || dirs [ "+( index.dirExist + index.newdir )+" ] |");
-        console.log( "----------------------------------------------");
-        console.log("[ ☺ ] error Count [ " + (index.errDir+index.errFile) + " ]");
-        console.log( "----------------------------------------------");
+        log(colors.blue     ("=<| say cheeese... |>============================"));
+        log(colors.green    ("[ ✓ ] Total File Created : " + index.newfile));
+        log(colors.yellow   ("[ ✓ ] file exist : " + index.fileExist ));        
+        log(colors.green    ("[ ✓ ] Total dir Created : " + index.newdir ));
+        log(colors.yellow   ("[ ✓ ] dir exist : " + index.dirExist ));
+        log(colors.red      ("[ ✘ ] file create error  : " + index.errFile ));
+        log(colors.blue    ("________________________________________________"));
+        log(colors.cyan("[ シ ]") , 
+                colors.cyan('sum files =') ,colors.bold(colors.yellow("[ "+(index.fileExist + index.newfile) +" ]")),
+                colors.cyan('|| dirs =') ,colors.bold(colors.yellow("[ "+( index.dirExist + index.newdir )+" ]"))
+                
+            );
+        log(colors.blue("==============================================="));
     }else{
     }
 }
