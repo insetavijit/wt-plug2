@@ -51,7 +51,7 @@ gulp.task('tsc', function() {
     return merge([
         tSrc.dts.pipe(gulp.dest(dirLs.typings + "/cust")),
         tSrc.js.pipe(sourceMaps.write("./map"))
-        .pipe(gulp.dest(dirLs.build + '/inc/js'))
+        .pipe(gulp.dest(dirLs.build + '/js'))
     ]);
 });
 

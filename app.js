@@ -69,8 +69,6 @@ var dirLs =
     './inc',
     './inc/src',
     './inc/typings',
-    './inc/css',
-    './inc/js',
 
     './func',
     './func/widgets',
