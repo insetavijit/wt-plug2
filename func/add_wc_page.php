@@ -6,7 +6,7 @@ add_action( 'admin_menu' , 'ins_add_menu_homePage' );
 function ins_add_menu_homePage(){
     $incPath = explode( "\\", plugin_dir_path( __FILE__ ) );
     // $incPath = plugin_dir_path( __FILE__ );
-    print_r( $incPath );
+    // print_r( $incPath );
     add_menu_page(
         // $page_title:string, 
         __( 'wt-seed wellcome page', 'inset'),
