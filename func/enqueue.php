@@ -7,17 +7,15 @@
 |*/
 add_action( 'admin_enqueue_scripts', 'ins_admin_js_and_css'  );
 function ins_admin_js_and_css(){
-    $incPath = explode( "\\", plugin_dir_path( __FILE__ ) );
-    $pluginDir = $incPath [count( $incPath ) -2 ] ;
     ##################|  [ StyleSheet - fontEnd ]  |###################### 
 
-        wp_register_style( 'adminStyle', plugins_url( $pluginDir ) . '/inc/css/adminStyle/adminStyle.css', array(), 'all' );
-        wp_register_style( 'fa', plugins_url( $pluginDir ) . '/inc/vendor/font-awesome/css/font-awesome.min.css', array(), 'all' );
-        wp_register_style( 'Bootstrap', plugins_url( $pluginDir ) . '/inc/vendor/bootstrap.min.css', array(), 'all' );
+        wp_register_style( 'adminStyle', plug_infos('url') . '/inc/css/adminStyle/adminStyle.css', array(), 'all' );
+        wp_register_style( 'fa', plug_infos('url') . '/inc/vendor/font-awesome/css/font-awesome.min.css', array(), 'all' );
+        wp_register_style( 'Bootstrap', plug_infos('url') . '/inc/vendor/bootstrap.min.css', array(), 'all' );
 
     ##################|  [ Scripts - fontEnd ]  |###################### 
-        wp_register_script( 'adminScripts', plugins_url( $pluginDir ) . '/inc/js/adminScripts/adminScripts.js', array('jquery'), true );
-        wp_register_script( 'Bootstrap', plugins_url( $pluginDir ) . '/inc/vendor/bootstrap.min.js', array('jquery'), true );
+        wp_register_script( 'adminScripts', plug_infos('url') . '/inc/js/adminScripts/adminScripts.js', array('jquery'), true );
+        wp_register_script( 'Bootstrap', plug_infos('url') . '/inc/vendor/bootstrap.min.js', array('jquery'), true );
 
     ##################|  [ enqueing all ]  |###################### 
     
