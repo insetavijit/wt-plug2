@@ -3,6 +3,7 @@
 # escaping auto genarate dirs : we don't need them . we can create them by gulp . tada
 
 doc
+asset
 #lib
 dist
 #removing Auto Genarated files
