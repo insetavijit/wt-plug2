@@ -1,10 +1,10 @@
-# wt - seed ( wordpress theme seed )
+# wt - plug ( wordpress theme plug )
 
-This seed is a free boiler plate for rappid wp them devlopment .
+This plug is a free boiler plate for rappid wp them devlopment .
 
-Name : `wt-seed` .
+Name : `wt-plug` .
 
-URL : https://github.com/insetavijit/wt-seed
+URL : https://github.com/insetavijit/wt-plug
 
 Author : `avijit sarkar`
 

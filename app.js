@@ -14,18 +14,10 @@ var
 
 var fileLs = [//21 files for now
     //files for root
-    'index.php',
-    'header.php',
-    'footer.php',
-
     'functions.php',
-    // 'singel.php',
-    // 'page.php',
-    'style.css',
     'README.md',
     
     //> common files :
-    "./func/theme_support.php",
     "./func/enqueue.php",
     // lib > scss    
     'asset/scss/adminStyle/adminStyle.scss',
@@ -33,16 +25,9 @@ var fileLs = [//21 files for now
     // lib > typeScripts    
     'asset/ts/adminScripts/adminScripts.ts',
     'asset/ts/fontScripts/fontScript.ts',
-    // lib > header
-    'lib/header/navigationBar.php',
-    'lib/header/topBar.php',
-    'lib/header/headerContent.php',
-    // lib > footer
-    'lib/footer/footerContent.php',
-    // lib > content
-    'lib/content/sidebarContent.php',
-    'lib/content/mainContent.php',
-    // lib > docration file's
+    //templates:
+    'lib/home/wc.php',
+    // doc > docration file's
     'doc/current/index.md',
     'doc/current/funcList.md',
     'doc/current/widgets.md',
@@ -53,9 +38,7 @@ var fileLs = [//21 files for now
     '.tmp/x.html',
     '.tmp/y.html',
     '.tmp/z.html'
-    
 ];
-
 
 var dirLs = 
 [ // 21 dir for now
@@ -72,14 +55,12 @@ var dirLs =
     
     './inc',
     './inc/src',
+    './inc/vendor',
 
     './func',
-    './func/widgets',
     
     'lib',
-    'lib/header',
-    'lib/footer',
-    'lib/content',
+    'lib/home',
 
     './doc',
     './doc/resource',
@@ -180,5 +161,3 @@ if(cmnd.createFiles === true ){
     }else{
     }
 }
-
-

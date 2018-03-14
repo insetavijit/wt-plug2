@@ -1,5 +1,5 @@
 {
-  "name": "wt-seed",
+  "name": "wt-plug",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/insetavijit/wt-seed.git"
+    "url": "git+https://github.com/insetavijit/wt-.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/insetavijit/wt-seed/issues"
+    "url": "https://github.com/insetavijit/wt-plug/issues"
   },
-  "homepage": "https://github.com/insetavijit/wt-seed#readme",
+  "homepage": "https://github.com/insetavijit/wt-plug#readme",
   "devDependencies": {
     "ansi-colors": "^1.1.0",
     "fancy-log": "^1.3.2",
