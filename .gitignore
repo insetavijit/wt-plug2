@@ -2,13 +2,39 @@
 
 # escaping auto genarate dirs : we don't need them . we can create them by gulp . tada
 
+
+
+
+
+
+
+DELETE THIS PART  - DELETE THIS PART  - DELETE THIS PART  
+####################| THE PART |########################################
+# DELETE THIS PART  : else thise files will not be a uploaded to gitlab / github or whatever
 doc
 asset
-#lib
-dist
-#removing Auto Genarated files
 wt-plug.php
+###################| DELETE THIS PART  |################################
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#removing Auto Genarated files
+dist
 /inc/css
 /inc/js
 /inc/vendor
