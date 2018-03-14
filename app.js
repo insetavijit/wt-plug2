@@ -55,6 +55,7 @@ var dirLs =
     
     './inc',
     './inc/src',
+    './inc/img',
     './inc/vendor',
 
     './func',

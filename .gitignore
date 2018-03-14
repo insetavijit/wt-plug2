@@ -2,8 +2,8 @@
 
 # escaping auto genarate dirs : we don't need them . we can create them by gulp . tada
 inc/vendor 
-#doc
-#lib
+doc
+lib
 dist
 
 # Created by https://www.gitignore.io/api/node,windows,visualstudiocode
