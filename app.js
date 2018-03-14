@@ -167,7 +167,7 @@ if(cmnd.createFiles === true ){
     }
 }
 createEntrYpoint( dirName );
-function createEntrYpoint( filenName ){
+function createEntrYpoint( filename ){
     
     fileTemplate = '<?php \n/* \n' 
                             + '\tPlugin Name: ' + currentDir
@@ -180,9 +180,18 @@ function createEntrYpoint( filenName ){
                             + '\n\tLicense : GPL'
                             + '\n\tText Domain : inset'
                         + '\n*/ \n' 
-                        +"if(!define('ABSPATH')){ exit(); }\n\n"
-                        +"# Plugin Starting Point : \n\n"
-                        +"require_once ( plugin_dir_path( __FILE__ ) .'./func/enqueue.php'); # add other funcs just like that\n\n"
+                        +"if(!defined('ABSPATH')){ exit(); }\n\n"
+                        +"# Custom functions : "
+                        +"\nfunction plug_infos( $q = 'name' ){ "
+                            +"\n$infos =  get_plugin_data( __FILE__ ) ;"
+                            +"\n$infos['url'] = plugins_url().'/'.$infos['Name'];"
+                            +"\n$infos['name'] = $infos['Name'];"
+                            +"\n$infos['base'] = plugin_dir_path( __FILE__ );"
+                        +"\nreturn ( !$infos[$q] ) ? 0 : $infos[$q];"
+                        +"\n}"
+                        +"\n# Plugin Starting Point : \n\n"
+                        +"\nrequire_once ( plugin_dir_path( __FILE__ ) .'./func/enqueue.php'); # add other funcs just like that"
+                        +"\nrequire_once ( plugin_dir_path( __FILE__ ) .'./func/add_wc_page.php');"
                     ;
 
 
