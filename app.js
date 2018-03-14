@@ -2,17 +2,19 @@ var
     fs = require('fs'),
     dir = './tmp',
     colors = require("ansi-colors"),
-    log = require('fancy-log')
+    log = require('fancy-log'),
+    pkg = require("./package.json")
 ;
+
 
 /*\
 | | this is the main setup file for createing this project :
 | | just run - node app.js 
 | | and we will do the rest for u ! 
 | |settings :
-\*/ var cmnd = {'createDir' : true , 'createFiles' : true , 'stopOnErr ' : false}
+\*/ var cmnd = {'createDir' : false , 'createFiles' : false , 'stopOnErr ' : false}
 
-var fileLs = [//21 files for now
+var  fileLs = [//21 files for now
     //files for root
     'functions.php',
     'README.md',
@@ -39,7 +41,7 @@ var fileLs = [//21 files for now
     '.tmp/y.html',
     '.tmp/z.html'
 ];
-
+// log( currentDir );
 var dirLs = 
 [ // 21 dir for now
 
@@ -160,5 +162,38 @@ if(cmnd.createFiles === true ){
             );
         log(colors.blue("==============================================="));
     }else{
+    }
+}
+createEntrYpoint();
+function createEntrYpoint( ){
+    // log( 'Creating the entry point' );
+    var 
+        pwd = __dirname.split("/"),
+        currentDir  = pwd[pwd.length - 1] 
+    ;
+    filename = currentDir + '.php' ;
+    fileTemplate = '<?php \n/* \n' 
+                        + '\tPlugin Name: ' + currentDir
+                        + '\n\tPlugin URI :'
+                        + '\n\tDescription : wp-plug a wordpress plugin seed'
+                        + '\n\tVersion : 1.0.0.0'
+                        + '\n\tAuthor: avijit sarkar (change it) '
+                        + '\n\tAuthor URI : https://github.com/insetavijit/ (change it)'
+                        + '\n\tSeed URI : ' + pkg.homepage
+                        + '\n\tLicense : GPL'
+                        + '\n\tText Domain : inset'
+                    + '\n*/ \n ?>' ;
+
+
+    if(!fs.existsSync( filename )){
+        fs.writeFile(filename, fileTemplate , function(err) {
+            if(err){
+                log(colors.red('[ ✘ ] error : createing file  ') ,colors.bold(colors.yellow("[ "+( filename )+" ] create it yourself or run node app.js")));
+            }else{
+                log(colors.yellow('[ ✓ ] Entry point Created ') ,colors.bold(colors.green("[ "+( filename )+" ]")));
+            }
+        });
+    }else{
+        log(colors.yellow('[シ] file is already in ') ,colors.bold(colors.green("[ "+( filename )+" ]")));
     }
 }
