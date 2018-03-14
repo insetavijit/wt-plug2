@@ -177,16 +177,20 @@ function createEntrYpoint( ){
     ;
     filename = currentDir + '.php' ;
     fileTemplate = '<?php \n/* \n' 
-                        + '\tPlugin Name: ' + currentDir
-                        + '\n\tPlugin URI :'
-                        + '\n\tDescription : wp-plug a wordpress plugin seed'
-                        + '\n\tVersion : 1.0.0.0'
-                        + '\n\tAuthor: avijit sarkar (change it) '
-                        + '\n\tAuthor URI : https://github.com/insetavijit/ (change it)'
-                        + '\n\tSeed URI : ' + pkg.homepage
-                        + '\n\tLicense : GPL'
-                        + '\n\tText Domain : inset'
-                    + '\n*/ \n ?>' ;
+                            + '\tPlugin Name: ' + currentDir
+                            + '\n\tPlugin URI :'
+                            + '\n\tDescription : wp-plug a wordpress plugin seed'
+                            + '\n\tVersion : 1.0.0.0'
+                            + '\n\tAuthor: avijit sarkar (change it) '
+                            + '\n\tAuthor URI : https://github.com/insetavijit/ (change it)'
+                            + '\n\tSeed URI : ' + pkg.homepage
+                            + '\n\tLicense : GPL'
+                            + '\n\tText Domain : inset'
+                        + '\n*/ \n' 
+                        +"if(!define('ABSPATH')){ exit(); }\n\n"
+                        +"# Plugin Starting Point : \n\n"
+                        +"require_once ( plugin_dir_path( __FILE__ ) .'./func/enqueue.php'); # add other funcs just like that\n\n"
+                    ;
 
 
     if(!fs.existsSync( filename )){
