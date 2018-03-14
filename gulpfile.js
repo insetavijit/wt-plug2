@@ -65,13 +65,13 @@ gulp.task('tsc', function() {
 //> libs to move 
 gulp.task('sftLib', function() {
     gulp.src([//just un comment all to use them !!!
-        // //> fremworks :
-        // './node_modules/bootstrap/dist/css/bootstrap.min.css',
-        // './node_modules/bootstrap/dist/js/bootstrap.min.js',
-        // //> icon - pack 
-        // './node_modules/font-awesome**/**',
-        // //>js libs
-        // './node_modules/jquery/dist/jquery.min.js'
+        //> fremworks :
+        './node_modules/bootstrap/dist/css/bootstrap.min.css',
+        './node_modules/bootstrap/dist/js/bootstrap.min.js',
+        //> icon - pack 
+        './node_modules/font-awesome**/**',
+        //>js libs
+        './node_modules/jquery/dist/jquery.min.js'
     ])
       .pipe(gulp.dest(dirLs.build + '/vendor'))//move to
 });
