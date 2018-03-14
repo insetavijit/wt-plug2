@@ -17,18 +17,22 @@ var
     'createFiles' : true , // make it false it not want to create files
     'stopOnErr ' : false //leave that
 }
-
+// log( 'Creating the entry point' );
+var 
+    pwd = __dirname.split("/"),
+    currentDir  = pwd[pwd.length - 1] 
+;
+dirName = currentDir + '.php' ;
 var  fileLs = [//21 files for now
     //files for root
-    'functions.php',
     'README.md',
     
     //> common files :
     "./func/enqueue.php",
     // lib > scss    
-    'asset/scss/adminStyle.scss',
+    'asset/scss/'+currentDir+'.scss',
     // lib > typeScripts    
-    'asset/ts/adminScripts.ts',
+    'asset/ts/'+currentDir+'.ts',
     //templates:
     'lib/home/wc.php',
     // doc > docration file's
@@ -162,14 +166,9 @@ if(cmnd.createFiles === true ){
     }else{
     }
 }
-createEntrYpoint();
-function createEntrYpoint( ){
-    // log( 'Creating the entry point' );
-    var 
-        pwd = __dirname.split("/"),
-        currentDir  = pwd[pwd.length - 1] 
-    ;
-    filename = currentDir + '.php' ;
+createEntrYpoint( dirName );
+function createEntrYpoint( filenName ){
+    
     fileTemplate = '<?php \n/* \n' 
                             + '\tPlugin Name: ' + currentDir
                             + '\n\tPlugin URI :'
