@@ -73,7 +73,7 @@ gulp.task('sftLib', function() {
         // //>js libs
         // './node_modules/jquery/dist/jquery.min.js'
     ])
-      .pipe(gulp.dest(dirLs.build))//move to
+      .pipe(gulp.dest(dirLs.build + '/vendor'))//move to
 });
 
 ///> zipp
