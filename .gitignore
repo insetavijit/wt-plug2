@@ -1,12 +1,17 @@
 .tmp
 
 # escaping auto genarate dirs : we don't need them . we can create them by gulp . tada
-inc/vendor 
+
 doc
 lib
 dist
-#removing the template file (entry point | auto gen)
+#removing Auto Genarated files
 wt-plug.php
+
+/_inc/
+!/_inc/imgs/*
+!/_inc/src/*
+
 
 # Created by https://www.gitignore.io/api/node,windows,visualstudiocode
 
