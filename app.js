@@ -26,11 +26,9 @@ var  fileLs = [//21 files for now
     //> common files :
     "./func/enqueue.php",
     // lib > scss    
-    'asset/scss/adminStyle/adminStyle.scss',
-    'asset/scss/fontStyle/fontStyle.scss',
+    'asset/scss/adminStyle.scss',
     // lib > typeScripts    
-    'asset/ts/adminScripts/adminScripts.ts',
-    'asset/ts/fontScripts/fontScript.ts',
+    'asset/ts/adminScripts.ts',
     //templates:
     'lib/home/wc.php',
     // doc > docration file's
@@ -53,11 +51,7 @@ var dirLs =
 
     './asset',
     './asset/scss',
-    './asset/scss/adminStyle',
-    './asset/scss/fontStyle',
     './asset/ts',
-    './asset/ts/adminScripts',
-    './asset/ts/fontScripts',
     
     './inc',
     './inc/src',
