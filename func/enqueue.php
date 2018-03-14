@@ -10,9 +10,12 @@ function ins_admin_js_and_css(){
     ##################|  [ StyleSheet - fontEnd ]  |###################### 
 
         wp_register_style( 'adminStyle', get_template_directory_uri() . '/inc/css/adminStyle/adminStyle.css', array(), 'all' );
+        wp_register_style( 'fa', get_template_directory_uri() . '/inc/vendor/font-awesome/css/font-awesome.min.css', array(), 'all' );
+        wp_register_style( 'Bootstrap', get_template_directory_uri() . '/inc/vendor/bootstrap.min.css', array(), 'all' );
 
     ##################|  [ Scripts - fontEnd ]  |###################### 
         wp_register_script( 'adminScripts', get_template_directory_uri() . '/inc/js/adminScripts/adminScripts.js', array('jquery'), true );
+        wp_register_script( 'Bootstrap', get_template_directory_uri() . '/inc/vendor/bootstrap.min.js', array('jquery'), true );
 
     ##################|  [ enqueing all ]  |###################### 
     
