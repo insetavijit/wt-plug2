@@ -25,7 +25,5 @@ function ins_add_menu_homePage(){
 }
 
 function ins_wellcome_page_setup(){
-    $incPath = explode( "/", plugin_basename( __FILE__) ); # [0] is the plugin name :
-    echo "<pre>";
-    print_r( plug_infos('url') );
+    require_once( plug_infos('base') .'/lib/home/wc.php');
 }
