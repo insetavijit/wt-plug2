@@ -12,7 +12,11 @@ var
 | | just run - node app.js 
 | | and we will do the rest for u ! 
 | |settings :
-\*/ var cmnd = {'createDir' : false , 'createFiles' : false , 'stopOnErr ' : false}
+\*/ var cmnd = {
+    'createDir' : true , //make it false it not want to create dirs
+    'createFiles' : true , // make it false it not want to create files
+    'stopOnErr ' : false //leave that
+}
 
 var  fileLs = [//21 files for now
     //files for root
