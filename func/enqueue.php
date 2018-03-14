@@ -9,12 +9,12 @@ add_action( 'admin_enqueue_scripts', 'ins_admin_js_and_css'  );
 function ins_admin_js_and_css(){
     ##################|  [ StyleSheet - fontEnd ]  |###################### 
 
-        wp_register_style( 'adminStyle', plug_infos('url') . '/inc/css/adminStyle/adminStyle.css', array(), 'all' );
+        wp_register_style( 'adminStyle', plug_infos('url') . '/inc/css/adminStyle.css', array(), 'all' );
         wp_register_style( 'fa', plug_infos('url') . '/inc/vendor/font-awesome/css/font-awesome.min.css', array(), 'all' );
         wp_register_style( 'Bootstrap', plug_infos('url') . '/inc/vendor/bootstrap.min.css', array(), 'all' );
 
     ##################|  [ Scripts - fontEnd ]  |###################### 
-        wp_register_script( 'adminScripts', plug_infos('url') . '/inc/js/adminScripts/adminScripts.js', array('jquery'), true );
+        wp_register_script( 'adminScripts', plug_infos('url') . '/inc/js/adminScripts.js', array('jquery'), true );
         wp_register_script( 'Bootstrap', plug_infos('url') . '/inc/vendor/bootstrap.min.js', array('jquery'), true );
 
     ##################|  [ enqueing all ]  |###################### 

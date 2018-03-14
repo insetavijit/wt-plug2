@@ -2,13 +2,16 @@ $bg-base : #FAFAFA ;
 
 
 /*======================================================
-| | fixs 
+| | fixes for the wellcome page
 [ # ]>=============*/
-.ins-wrapper{ margin-left: -1em ; }
+.ins-wrapper{
+    margin-left: -1em ;
+}
 
 /*======================================================
-| | Views According to Devices :
+| | views for some devices 
 [ # ]>=============*/
+
 @media ( min-width : 1024px ){
     section {
         padding: 3em ;
