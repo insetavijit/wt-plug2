@@ -1,6 +1,7 @@
 .tmp
 
-inc/vendor
+# escaping auto genarate dirs : we don't need them . we can create them by gulp . tada
+inc/vendor 
 #doc
 #lib
 dist
