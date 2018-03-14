@@ -1,7 +1,10 @@
 # wt - plug ( wordpress theme plug )
 
 This plug is a free boiler plate for rappid wp them devlopment .
-
+    
+    note : no fontend stuff . only the admin part
+    Only devlope the plugin for admin jobs 
+    if you want to make changes in font-end go with child-them 
 Name : `wt-plug` .
 
 URL : https://github.com/insetavijit/wt-plug
