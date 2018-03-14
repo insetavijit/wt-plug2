@@ -5,6 +5,8 @@ inc/vendor
 doc
 lib
 dist
+#removing the template file (entry point | auto gen)
+wt-plug.php
 
 # Created by https://www.gitignore.io/api/node,windows,visualstudiocode
 
