@@ -8,9 +8,9 @@ dist
 #removing Auto Genarated files
 wt-plug.php
 
-/_inc/
-!/_inc/imgs/*
-!/_inc/src/*
+/inc/css
+/inc/js
+/inc/vendor
 
 
 # Created by https://www.gitignore.io/api/node,windows,visualstudiocode
