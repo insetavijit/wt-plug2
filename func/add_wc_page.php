@@ -4,7 +4,7 @@
 add_action( 'admin_menu' , 'ins_add_menu_homePage' );
 
 function ins_add_menu_homePage(){
-    $incPath = explode( "\\", plugin_dir_path( __FILE__ ) );
+    $incPath = explode( "/", plugin_basename( __FILE__) );
     // $incPath = plugin_dir_path( __FILE__ );
     // print_r( $incPath );
     add_menu_page(
@@ -19,12 +19,13 @@ function ins_add_menu_homePage(){
         // $function:callable, 
         'ins_wellcome_page_setup',
         // $icon_url:string,
-        plugins_url( $incPath [count( $incPath ) -2 ] )."/inc/img/ins_.png"
+        plugins_url( $incPath [ 0 ] )."/inc/img/ins_.png"
         // $position:integer|null
     );
 }
 
 function ins_wellcome_page_setup(){
-    echo 'hi';
+    $incPath = explode( "/", plugin_basename( __FILE__) ); # [0] is the plugin name :
+    echo "<pre>";
+    print_r( plug_infos('url') );
 }
-

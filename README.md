@@ -13,6 +13,39 @@ Author : `avijit sarkar`
 
 Author url : https://github.com/insetavijit/
 
+> ## CUSTOM FUNCTIONS :
+indx|func name | usecase
+--|--|--|
+1|plug_infos() |use get_plugin_data() any ware
+
+> details 
+
+Function name : `plug_infos()` <br/>
+Returns : `string` <br>
+dec : returns `0` in case we unable to get it .
+```
+infos contains :
+    [Name] => wt-plug
+    [PluginURI] => 
+    [Version] => 
+    [Description] =>  By avijit sarkar (change it).
+    [Author] => avijit sarkar (change it)
+    [AuthorURI] => 
+    [TextDomain] => wt-plug
+    [DomainPath] => 
+    [Network] => 
+    [Title] => wt-plug
+    [AuthorName] => avijit sarkar (change it)
+    [url] => http://localhost/wordpress/one/wp-content/plugins/wt-plug
+
+```
+USE :
+
+    //call
+        echo plug_infos['name'];
+    //result :
+        wt-plug
+
 > ## _BOOOM !!!! just run `[ npm i ]` and all ready to Fly_
 
 post install sctipts makes this happen 
